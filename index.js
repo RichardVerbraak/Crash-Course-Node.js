@@ -7,7 +7,19 @@
 
 // console.log(__dirname, __filename)
 
-const Person = require('./person')
-const person1 = new Person('Richard', 26)
+// const Person = require('./person')
+// const person1 = new Person('Richard', 26)
 
-person1.greetings()
+// person1.greetings()
+
+const Logger = require('./logger')
+
+const logger = new Logger()
+
+logger.on('message', (data) => {
+	console.log('Called the listener and received this data: ', data)
+})
+
+logger.log('Hello world')
+logger.log('Hi')
+logger.log('Bye')
